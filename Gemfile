@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',                   '6.0.4'
-gem 'aws-sdk-s3',              '1.46.0', require: false
+gem 'aws-sdk-s3',              '~> 1', require: false
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
 gem 'active_storage_validations', '0.8.2'
@@ -17,6 +17,9 @@ gem 'webpacker',  '~> 6.0.0.pre.2'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.10.3', require: false
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
@@ -25,7 +28,9 @@ end
 
 group :development do
   gem 'web-console',           '4.0.1'
-  gem 'listen',                '3.1.5'
+  # 以下のバージョンは利用不可
+  # gem 'listen',                '3.1.5'
+  gem 'listen', '~> 3.7'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
 end
